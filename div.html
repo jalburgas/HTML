@@ -1,65 +1,122 @@
-<!-- Aquí tienes la definición de <div> en español:
-
-La etiqueta <div> en HTML es un contenedor de bloque que se utiliza para agrupar otros elementos HTML con el fin de darles estilo o aplicarles interactividad.
-
-Definición punto por punto:
-
-    Propósito: Define una división o sección en un documento HTML.
-
-    Comportamiento por defecto: Ocupa todo el ancho disponible (comienza en una línea nueva) y añade un salto de línea antes y después.
-
-    Significado semántico: Ninguno. A diferencia de etiquetas como <article> o <nav>, <div> no describe el contenido que envuelve.
-
-    Casos de uso:
-
-        Agrupar elementos para aplicarles estilos CSS (por ejemplo, crear una caja con fondo de color).
-
-        Envolver elementos para aplicarles funcionalidad con JavaScript.
-
-        Estructurar diseños de página (a menudo usado con CSS Grid o Flexbox). -->
-
-<html>
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta y Layout Alineado</title>
     <style>
-        .tarjeta {
-            background-color: lightblue;
-            padding: 20px;
-            border-radius: 5px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f2f5;
+            padding: 40px;
+        }
+
+        /* Contenedor principal */
+        .main-container {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Tarjeta */
+        .tarjeta {
+            width: 380px;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .tarjeta h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333333;
+            font-size: 24px;
+        }
+
+        .tarjeta p {
+            margin-bottom: 20px;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+        /* Div interno */
+        .tbody {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .tbody p {
+            margin-bottom: 0;
+            color: #555555;
+        }
+
+        /* Contenedor de columnas */
         .contenedor {
             display: flex;
+            gap: 20px;
+            width: 100%;
         }
 
+        /* Columna izquierda */
         .columna-izquierda {
             width: 30%;
-            background-color: lightgray;
-            padding: 10px;
+            background-color: #2c3e50;
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
         }
 
+        /* Columna derecha */
         .columna-derecha {
             width: 70%;
-            background-color: white;
-            padding: 10px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dddddd;
+            color: #333333;
+            line-height: 1.5;
+        }
+
+        .columna-derecha strong {
+            color: #2c3e50;
         }
     </style>
 </head>
 
 <body>
-    <div class="tarjeta">
-        <h2>Título</h2>
-        <p>Este texto está dentro del div.</p>
-    </div>
-
-    <!-- 2. Agrupar elementos para CSS (layout de columnas) -->
-
-    <div class="contenedor">
-        <div class="columna-izquierda">
-            Menú lateral
+    <div class="main-container">
+        <!-- Tarjeta -->
+        <div class="tarjeta">
+            <h2>Título</h2>
+            <p>Este texto está dentro del div principal de la tarjeta.</p>
+            <div class="tbody">
+                <p>Este es otro div interno (tbody).</p>
+            </div>
         </div>
-        <div class="columna-derecha">
-            Contenido principal
+
+        <!-- Layout de columnas -->
+        <div class="contenedor">
+            <div class="columna-izquierda">
+                Menu lateral
+            </div>
+            <div class="columna-derecha">
+                <strong>Contenido principal</strong>
+                <br><br>
+                Este es el area de contenido principal, perfectamente alineado con el menu lateral.
+                Las columnas estan distribuidas en 30% y 70% respectivamente.
+            </div>
         </div>
     </div>
 </body>
