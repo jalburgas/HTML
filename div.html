@@ -1,0 +1,67 @@
+<!-- Aquí tienes la definición de <div> en español:
+
+La etiqueta <div> en HTML es un contenedor de bloque que se utiliza para agrupar otros elementos HTML con el fin de darles estilo o aplicarles interactividad.
+
+Definición punto por punto:
+
+    Propósito: Define una división o sección en un documento HTML.
+
+    Comportamiento por defecto: Ocupa todo el ancho disponible (comienza en una línea nueva) y añade un salto de línea antes y después.
+
+    Significado semántico: Ninguno. A diferencia de etiquetas como <article> o <nav>, <div> no describe el contenido que envuelve.
+
+    Casos de uso:
+
+        Agrupar elementos para aplicarles estilos CSS (por ejemplo, crear una caja con fondo de color).
+
+        Envolver elementos para aplicarles funcionalidad con JavaScript.
+
+        Estructurar diseños de página (a menudo usado con CSS Grid o Flexbox). -->
+
+<html>
+
+<head>
+    <style>
+        .tarjeta {
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .contenedor {
+            display: flex;
+        }
+
+        .columna-izquierda {
+            width: 30%;
+            background-color: lightgray;
+            padding: 10px;
+        }
+
+        .columna-derecha {
+            width: 70%;
+            background-color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tarjeta">
+        <h2>Título</h2>
+        <p>Este texto está dentro del div.</p>
+    </div>
+
+    <!-- 2. Agrupar elementos para CSS (layout de columnas) -->
+
+    <div class="contenedor">
+        <div class="columna-izquierda">
+            Menú lateral
+        </div>
+        <div class="columna-derecha">
+            Contenido principal
+        </div>
+    </div>
+</body>
+
+</html>
